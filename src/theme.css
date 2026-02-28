@@ -1,0 +1,103 @@
+/* ── Al Día — Design Tokens ── */
+
+:root {
+  /* Palette */
+  --color-bg: #F4EFE6;
+  --color-card: #FFFFFF;
+  --color-olive: #536B4A;
+  --color-olive-light: #6E8A62;
+  --color-olive-pale: #E6EDDF;
+  --color-olive-muted: #A3B598;
+  --color-earth: #8B7355;
+  --color-earth-light: #A6916E;
+  --color-earth-pale: #F0E6D6;
+  --color-text: #1E1E1E;
+  --color-text-mid: #4A4A4A;
+  --color-text-muted: #6B6B6B;
+  --color-text-light: #8A8A8A;
+  --color-white: #FFFFFF;
+  --color-border: #DDD7CA;
+  --color-accent: #B8860B;
+  --color-red: #C0392B;
+  --color-green: #2E7D32;
+  --color-green-light: #E8F5E9;
+  --color-red-light: #FFEBEE;
+  --color-warm: #FAF7F2;
+
+  /* Typography */
+  --font-body: 'DM Sans', sans-serif;
+  --font-title: 'Playfair Display', Georgia, serif;
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+  --radius-pill: 24px;
+  --radius-round: 50%;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 1px 4px rgba(0, 0, 0, 0.04);
+  --shadow-card: 0 4px 16px rgba(83, 107, 74, 0.25);
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+  --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Reset & Base ── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input {
+  font-family: inherit;
+}
+
+/* ── Screen transition ── */
+
+.screen-enter {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.screen-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity var(--transition-normal), transform var(--transition-normal);
+}
+
+/* ── Utility: hide scrollbar ── */
+
+.hide-scrollbar {
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── Utility: press effect ── */
+
+.pressable {
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+.pressable:active {
+  transform: scale(0.98);
+}
